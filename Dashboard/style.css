@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+#dashboard_nav {
+    width: 20%;
+    height: 100vh;
+    background-color: #8B8B8B;
+}
+#dashboard_nav ul {
+    list-style: none;
+}
+#dashboard_nav li {
+    padding: 5px 0;
+}
+#dashboard_nav a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.selected {
+    font-weight: 900;
+}
+#dashboard_name {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.sub_list {
+    font-size: .75em;
+}
+#dashboard_main {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#dashboard_heading {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+#section_name {
+    color: #8B8B8B;
+}
+/* inventory page */
+#dashboard_heading button {
+    background: #8B8B8B;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+}
+#inventory_table {
+    margin: 20px auto;
+    color: #8B8B8B;
+}
+#inventory_table, #inventory_table th, #inventory_table td {
+    border: solid #8B8B8B 1px;
+    border-collapse: collapse;
+}
+#inventory_table th, #inventory_table td {
+    height: 20px;
+    padding: 5px;
+    min-width: 100px;
+}
