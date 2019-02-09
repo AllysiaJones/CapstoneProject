@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="dashboard_nav">
+        <ul>
+            <li id="dashboard_name"><a href="">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a>
+                <ul class="sub_list">
+                    <li><a href="" class="selected">Add/Update Product</a></li>
+                    <li><a href="">Remove Product</a></li>
+                </ul>
+            </li>
+            <li><a href="">Sales</a></li>
+        </ul>
+    </nav>
+    <div id="dashboard_main">
+        <div id="dashboard_heading">
+            <h1 id="section_name">Add/Update Product</h1>
+        </div>
+        <form action="" id="product_form" onreset="storeProductInfo()">
+            <div id="product_selects">
+                <div id="product_names">
+                    <select name="product_names" id="product_list" onchange="dropDownSelection('product')">
+                        <option value="" hidden>Product Name</option>
+                        <option value="new">+ New Product</option>
+                        <option value="1">Product Name</option>
+                    </select>
+                    <input type="text" id="new_product_input" hidden>
+                </div>
+                <div id="category_names">
+                    <select name="category_names" id="category_list" onchange="dropDownSelection('category')">
+                        <option value="" hidden>Category Name</option>
+                        <option value="new">+ New Category</option>
+                        <option value="1">Category Name</option>
+                    </select>
+                    <input type="text" id="new_category_input" hidden>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="product_headers">Enter Sizing Information:</h2>
+                <input type="text" name="size" class="product_info" placeholder="Size">
+                <div>
+                    <input type="number" name="quantity" class="product_info" min="1" placeholder="Quantity">
+                    <input type="checkbox" name="same_quantity" id="same_quantity">
+                    <label for="same_quantity">Apply Quantity to All</label>
+                </div>
+                <div>
+                    <input type="number" name="price" class="product_info" min="0" step=".01" placeholder="Price">
+                    <span>
+                        <input type="checkbox" name="same_price" id="same_price">
+                        <label for="same_price">Apply Price to All</label>
+                    </span>
+
+                </div>
+                <button type="reset" value="Reset">Add Product</button>
+            </div>
+            <div id="image_layout">
+                <h2 class="product_headers">Upload Product Picture(s)</h2>
+                <label for="files">Select your images(s):</label>
+                <input type="file" name="files" id="files" accept=".png, .jpg, .jpeg" multiple="true" onchange="previewImages()">
+                <img id="image_preview">
+            </div>
+
+        </form>
+
+    </div>
+    <script type="text/javascript" src="inventory.js"></script>
+    <script type="text/javascript" src="product.js"></script>
+</body>
+<script>
+    function dropDownSelection(inputType) {
+        let value = "";
+        switch (inputType) {
+            case "product":
+                let productNames = document.getElementById("product_list");
+                value = productNames.options[productNames.selectedIndex].value;
+                break;
+            case "category":
+                let categoryNames = document.getElementById("category_list");
+                value = categoryNames.options[categoryNames.selectedIndex].value;
+                break;
+        }
+
+        if (value == "new") {
+            createNewInput(inputType);
+        }
+        else {
+            getSelectedInput(inputType);
+        }
+    }
+    function createNewInput(inputType) {
+        switch (inputType) {
+            case "product":
+                document.getElementById("new_product_input").hidden = false;
+                break;
+            case "category":
+                document.getElementById("new_category_input").hidden = false;
+                break;
+        }
+    }
+    function getSelectedInput(inputType) {
+        switch (inputType) {
+            case "product":
+                document.getElementById("new_product_input").hidden = true;
+                break;
+            case "category":
+                document.getElementById("new_category_input").hidden = true;
+                break;
+        }
+    }
+    function previewImages() {
+        var preview = document.getElementById('image_preview');
+        var file = document.getElementById("files").files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+    function storeProductInfo() {
+
+    }
+</script>
+
+</html>
