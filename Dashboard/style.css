@@ -1,25 +1,52 @@
 body {
     margin: 0;
     padding: 0;
+}
+#dashboard_header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #243139;
+    height: 5vh;
+    padding: 0 10px;
+}
+#sellers_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5vh;
+}
+#sellers_image {
+    height: 4vh;
+    margin-left: 3px;
+}
+#sellers_company_name {
+    margin-left: 10px;
+}
+#dashboard_info {
+   display: flex;
+   flex-direction: row;
+   background-color: #243139;
 }
 #dashboard_nav {
-    width: 20%;
+    width: 25%;
     height: 100vh;
-    background-color: #8B8B8B;
+    background-color: #FFFFFF;
+    color: #303E47;
 }
 #dashboard_nav ul {
     list-style: none;
+    padding-left: 0;
 }
 #dashboard_nav li {
-    padding: 5px 0;
+    padding: 5px 10px;
+   
 }
 #dashboard_nav a {
     text-decoration: none;
-    color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #303E47;
 }
 .selected {
     font-weight: 900;
@@ -29,15 +56,153 @@ body {
     font-weight: 600;
     margin-bottom: 20px;
 }
+#seller_logout {
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+}
 .sub_list {
     font-size: .75em;
 }
 #dashboard_main {
-    width: 80%;
+    width: 85%;
     padding: 20px;
+    color: #FFFFFF;
+}
+button {
+    cursor: pointer;
+}
+.dashboard_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    background-color: 	#303E47;
+}
+/* top products row */
+#top_products_header {
+    margin: 10px 10px 0 10px;
+    font-size: 16px;
+}
+.top_product {
+   width: 50%;
+}
+#top_products {
+    height: 15vh;
+    width: 100%;
+}
+.top_product_image {
+    height: 80%;
+    margin: 0 10px;
+}
+.top_product_info {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
 }
+.top_product_name, .progress_label, .progress_min, .progress_max {
+    margin: 0;
+    padding: 0;
+}
+.top_product_name {
+    font-weight: 600;
+}
+.progress_label {
+    margin: 15px 0 5px 0;
+}
+.top_product_stock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+progress[value]{
+    content: "40%";
+    width: 140px;
+    margin: 0 5px;
+}
+/* graphs row */
+.graphs {
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    height: 25vh;
+    padding: 10px; 
+}
+/* orders and reviews row */
+#orders_section, #reviews_section {
+    padding: 10px;
+    height: 35vh;
+    
+}
+#orders_section {
+    flex-direction: column;
+    width: 60%;
+    justify-content: space-around;
+    
+}
+#reviews_section {
+    flex-direction: row;
+    width: 40%;
+}
+.section_header {
+    margin: 0;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+}
+#orders {
+    width: 100%;
+    margin: 5px auto 0 auto;
+    border-collapse: collapse;
+}
+#orders th, #orders td {
+    min-width: 60px;
+    padding: 5px;
+}
+#orders th {
+    color: rgba(255, 255, 255, 0.8);
+}
+#orders td {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.685);
+    
+}
+#orders tr {
+    border-bottom: 1px solid rgb(76, 90, 99);
+}
+#orders_button {
+    justify-content: center;
+}
+#reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review_product_image {
+    height: 100px;
+    margin-top: 10px;
+}
+.reviewer_name, .review {
+    margin: 10px 0 0 0;
+}
+.review {
+    width: 80%;
+}
+.checked_star {
+    color: #298BD4;
+}
+.review_arrows {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* inventory.html */
 #dashboard_heading {
     margin: 0 auto;
     display: flex;
