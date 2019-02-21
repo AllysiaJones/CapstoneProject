@@ -9,25 +9,34 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar|Roboto" rel="stylesheet">
 </head>
 
 <body>
     <div id="dashboard_info">
         <nav id="dashboard_nav">
+            <a id="exit_nav" onclick="exitNav()"><i class="fa fa-times"></i></a>
             <h1 id="company_name">Our Company</h1>
-            <ul>
-                <li id="dashboard_name"><a href="">Dashboard</a></li>
-                <li><a href="" class="selected">Inventory</a>
-                    <ul class="sub_list">
-                        <li><a href="product.html">Add/Update Product</a></li>
-                        <li><a href="">Remove Product</a></li>
-                    </ul>
-                </li>
-                <li><a href="">Sales</a></li>
-                <li><a href="">Settings</a></li>
-                <!-- <li><a href="" id="seller_logout">Logout of <span id="sellers_name">Seller Name</span></a></li> -->
+            <ul id="nav_list">
+                <span>
+                    <!-- <li id="dashboard_name"><a href="">Dashboard</a></li> -->
+                    <li><a href="">Inventory
+                            <!-- <span><a href="" onclick="displaySubMenu()"><i class="arrow down">&#x25BC;</i></a></span> -->
+                        </a>
+                        <ul class="sub_list hidden">
+                            <li><a href="product.html">Add/Update Product</a></li>
+                            <li><a href="">Remove Product</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Sales</a></li>
+                    <li><a href="">Settings</a></li>
+                </span>
+                <li><a href="" id="seller_logout">Logout of <span id="sellers_name">Seller Name</span></a></li>
             </ul>
         </nav>
+        <div id="closed_nav" class="hidden">
+            <a id="hamburger_menu" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        </div>
         <div id="dashboard_main">
             <header id="dashboard_header">
                 <div id="sellers_header">
@@ -173,7 +182,28 @@
     </div>
 
     <script type="text/javascript" src="sales.js"></script>
-
+    <script>
+        function exitNav() {
+            document.getElementById("dashboard_nav").classList.add("hidden");
+            document.getElementById("dashboard_main").style.width = "100%";
+            document.getElementById("closed_nav").classList.remove("hidden");
+        }
+        function openNav() {
+            document.getElementById("dashboard_nav").classList.remove("hidden");
+            document.getElementById("dashboard_main").style.width = "85%";
+            document.getElementById("closed_nav").classList.add("hidden");
+        }
+        // function displaySubMenu(){
+        //     let subList = document.getElementsByClassName("sub_list")[0];
+        //     alert(subList.classList);
+        //     if(subList.classList.contains("hidden")){
+        //         subList.classList.remove("hidden");
+        //     }
+        //     else {
+        //         subList.classList.add("hidden");
+        //     }
+        // }
+    </script>
 
 </body>
 
