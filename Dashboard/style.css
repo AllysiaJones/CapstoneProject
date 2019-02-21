@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 #dashboard_header {
     display: flex;
@@ -33,20 +35,44 @@ body {
     width: 25%;
     height: 100vh;
     background-color: #FFFFFF;
-    color: #303E47;
+    color: #243139;
 }
-#dashboard_nav ul {
+#exit_nav {
+    margin: 5px 5px 0 0;
+    text-align: center;
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+#hamburger_menu {
+    color: #FFFFFF;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    cursor: pointer;
+}
+#company_name {
+    margin-top: 50px;
+    text-align: center;
+}
+#nav_list {
+    display: flex;
+    flex-direction: column;
+    height: 84%;
+    justify-content: space-between;
     list-style: none;
     padding-left: 0;
 }
-#dashboard_nav li {
+#nav_list li {
     padding: 5px 10px;
-   
+    text-align: center;
 }
-#dashboard_nav a {
+#nav_list a {
     text-decoration: none;
     text-transform: uppercase;
     color: #303E47;
+    text-align: center;
 }
 .selected {
     font-weight: 900;
@@ -57,12 +83,13 @@ body {
     margin-bottom: 20px;
 }
 #seller_logout {
-    margin-bottom: 20px;
-    position: absolute;
-    bottom: 0;
+   
 }
 .sub_list {
     font-size: .75em;
+}
+.hidden {
+    display: none;
 }
 #dashboard_main {
     width: 85%;
@@ -105,16 +132,18 @@ button {
     flex-direction: column;
     width: 100%;
     text-align: center;
+    padding-right: 10px;
 }
 .top_product_name, .progress_label, .progress_min, .progress_max {
     margin: 0;
     padding: 0;
 }
 .top_product_name {
+    font-size: 18px;
     font-weight: 600;
 }
 .progress_label {
-    margin: 15px 0 5px 0;
+    margin: 10px 0 5px 0;
 }
 .top_product_stock{
     display: flex;
