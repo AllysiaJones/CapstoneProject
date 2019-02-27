@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar|Roboto" rel="stylesheet">
+</head>
+
+<body id="login_page">
+    <div id="login_element">
+        <div id="login_buttons">
+            <button class="login_button selected_login" onclick="loginType('sign up')"><i class="fa fa-user-plus"></i> Sign Up</button>
+            <button class="login_button" onclick="loginType('login')"><i class="fa fa-sign-in"></i> Log In</button>
+        </div>
+        <form id="sign_up_form" action="login.php" method="POST" onsubmit="confirmLogin()">
+            <h1 class="form_header">Sign Up</h1>
+            <div class="login_section">
+                <i class="fa fa-envelope login_icon"></i>
+                <input type="email" name="email" id="" class="login_input" placeholder="Email" required>
+            </div>
+            <div class="login_section">
+                <i class="fa fa-id-card login_icon"></i>
+                <input type="text" name="first_name" id="first_name" class="login_input" placeholder="First Name" required>
+                <i class="fa fa-id-card login_icon"></i>
+                <input type="text" name="last_name" id="last_name" class="login_input" placeholder="Last Name" required>
+            </div>
+            <div class="login_section">
+                <i class="fa fa-building login_icon"></i>
+                <input type="text" name="company_name" id="" class="login_input" placeholder="Company Name" required>
+            </div>
+            <div class="login_section">
+                <i class="fa fa-user login_icon"></i>
+                <input type="text" name="username" id="" class="login_input" placeholder="Username" required>
+            </div>
+            <div class="login_section">
+                <i class="fa fa-unlock-alt login_icon"></i>
+                <input type="password" name="password" id="" class="login_input" placeholder="Password" required>
+            </div>
+            <div class="login_section">
+                <button id="sign_up_button" >Sign Up</button>
+            </div>
+        </form>
+        <form id="login_form" class="hidden" action="login.php" method="POST" onsubmit="confirmLogin()">
+            <h1 class="form_header">Login</h1>
+            <div class="login_section">
+                <i class="fa fa-user login_icon"></i>
+                <input type="text" name="username" id="" class="login_input" placeholder="Username" required>
+            </div>
+            <div class="login_section">
+                <i class="fa fa-unlock-alt login_icon"></i>
+                <input type="password" name="password" id="" class="login_input" placeholder="Password" required>
+            </div>
+            <div class="login_section">
+                <button id="login_button" type="submit">Login</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        function loginType(type){
+            let loginButtons = document.getElementsByClassName("login_button");
+            if(type == "login"){
+                loginButtons[0].classList.remove("selected_login");
+                loginButtons[1].classList.add("selected_login");
+                
+                document.getElementById("sign_up_form").classList.add("hidden");
+                document.getElementById("login_form").classList.remove("hidden");
+              
+
+            }
+            else if(type == "sign up") {
+                loginButtons[1].classList.remove("selected_login");
+                loginButtons[0].classList.add("selected_login");
+
+                document.getElementById("sign_up_form").classList.remove("hidden");
+                document.getElementById("login_form").classList.add("hidden");
+            }
+        }
+
+        function confirmLogin(){
+            // loads the dashboard homepage (needs to check database for correct username and password)
+            window.location.href = "dashboard.html";
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
