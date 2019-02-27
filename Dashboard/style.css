@@ -9,7 +9,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #243139;
     height: 5vh;
     padding: 0 10px;
 }
@@ -29,13 +28,13 @@ body {
 #dashboard_info {
    display: flex;
    flex-direction: row;
-   background-color: #243139;
+   background-color:#24272C;
 }
 #dashboard_nav {
     width: 25%;
     height: 100vh;
     background-color: #FFFFFF;
-    color: #243139;
+    color: #24272C;
 }
 #exit_nav {
     margin: 5px 5px 0 0;
@@ -109,7 +108,7 @@ button {
     flex-direction: row;
     align-items: center;
     margin: 10px;
-    background-color: 	#303E47;
+    background-color: #2E3136;
 }
 /* top products row */
 #top_products_header {
@@ -230,6 +229,89 @@ progress[value]{
     font-size: 20px;
     cursor: pointer;
 }
+
+/* dashboard login page */
+#login_page {
+    margin: 20vh auto 0 auto;
+    background-color: #2E3136;
+}
+#login_element {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    color: #FFFFFF;
+    background-color: #24272C;
+}
+#login_buttons {
+    display: flex;
+    width: 100%;
+}
+.login_button {
+    width: 50%;
+    height: 50px;
+    background-color:#454955;
+    border: none;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+.login_button:focus {
+    outline: none;
+}
+#sign_up_form, #login_form {
+    height: 350px;
+}
+.selected_login {
+    background-color: #298BD4;
+}
+.form_header {
+    text-align: center;
+}
+.login_section {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.login_icon {
+    padding: 7px;
+    background: #454955;
+    color: #FFFFFF;
+}
+.login_input {
+    padding: 5px;
+    width: 300px;
+    background: #454955;
+    color: #ffffff;
+    border: none;
+}
+.login_input:focus {
+    outline: none;
+}
+#first_name, #last_name {
+    width: 122px;
+}
+#first_name {
+    margin-right: 10px;
+}
+#sign_up_button, #login_button {
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    align-self: center;
+    background-color: #298BD4;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
 
 /* inventory.html */
 #dashboard_heading {
