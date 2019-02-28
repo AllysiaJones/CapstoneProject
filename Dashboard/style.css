@@ -10,6 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 5vh;
+    width: 100%;
     padding: 0 10px;
 }
 #sellers_header {
@@ -25,16 +26,27 @@ body {
 #sellers_company_name {
     margin-left: 10px;
 }
+#logout_button {
+    padding: 8px;
+    margin-right: 20px;
+}
 #dashboard_info {
    display: flex;
    flex-direction: row;
+   height: 100vh;
+   width: 100%;
    background-color:#24272C;
 }
 #dashboard_nav {
-    width: 25%;
+    width: 12%;
     height: 100vh;
     background-color: #FFFFFF;
     color: #24272C;
+}
+#dashboard_main {
+    width: 85%;
+    padding: 20px;
+    color: #FFFFFF;
 }
 #exit_nav {
     margin: 5px 5px 0 0;
@@ -43,46 +55,36 @@ body {
     font-size: 30px;
     cursor: pointer;
 }
-#hamburger_menu {
-    color: #FFFFFF;
-    font-size: 25px;
-    position: absolute;
-    top: 20px;
-    left: 8px;
-    cursor: pointer;
-}
-#company_name {
+.company_name {
     margin-top: 50px;
     text-align: center;
 }
-#nav_list {
+.nav_list {
     display: flex;
     flex-direction: column;
-    height: 84%;
+    height: 80%;
     justify-content: space-between;
     list-style: none;
     padding-left: 0;
 }
-#nav_list li {
+.nav_list li {
     padding: 5px 10px;
     text-align: center;
 }
-#nav_list a {
+.nav_list span li {
+    margin: 20px 0;
+}
+.nav_list a {
     text-decoration: none;
     text-transform: uppercase;
-    color: #303E47;
+    color: #24272C;
     text-align: center;
+}
+.nav_icon {
+    font-size: 30px;
 }
 .selected {
     font-weight: 900;
-}
-#dashboard_name {
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-#seller_logout {
-   
 }
 .sub_list {
     font-size: .75em;
@@ -90,13 +92,44 @@ body {
 .hidden {
     display: none;
 }
-#dashboard_main {
-    width: 85%;
-    padding: 20px;
+/* closed nav styling */
+#closed_nav {
+    background-color: #24272C;
+    height: 100vh;
+    width: 5%
+}
+#closed_nav ul{
+    margin: 0;
+    height: 96%;
+}
+#closed_nav ul span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.closed_nav_icon {
+    font-size: 30px;
     color: #FFFFFF;
 }
-button {
+#hamburger_menu {
+    margin: 0 auto;
+    font-size: 25px;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+button {
+    color: #ffffff;
+    background-color: #298BD4;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 .dashboard_row {
     display: flex;
@@ -154,6 +187,45 @@ progress[value]{
     width: 140px;
     margin: 0 5px;
 }
+@media only screen and (max-width: 500px) {
+    #dashboard_nav {
+        width: 12%;
+    }
+    #dashboard_main {
+        width: 92%;
+        padding: 5px;
+    }
+    #dashboard_info {
+        height: 200vh;
+        /* width: 100vw; */
+    }
+    .dashboard_row {
+        display: flex;
+        flex-direction: column;
+    }
+    #top_products {
+        height: 50vh;
+        width: 100%;
+    }
+    #top_product {
+        width: 200px;
+    }
+    .top_product_info {
+        width: auto;
+    }
+    .top_product_name, .progress_label, .progress_min, .progress_max {
+        margin: 0;
+        padding: 0;
+    }
+    .top_product_name {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+
+
+
 /* graphs row */
 .graphs {
     display: flex;
@@ -204,7 +276,16 @@ progress[value]{
 #orders tr {
     border-bottom: 1px solid rgb(76, 90, 99);
 }
+.order_action_buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.view_order_button, .ship_order_button {
+    padding: 5px;
+}
 #orders_button {
+    padding: 5px;
+    margin-right: 20px;
     justify-content: center;
 }
 #reviews {
@@ -229,6 +310,13 @@ progress[value]{
     font-size: 20px;
     cursor: pointer;
 }
+@media only screen and (max-width: 925px) {
+    #logout_button {
+        margin-right: 20px;
+    }
+}
+
+
 
 /* dashboard login page */
 #login_page {
@@ -305,7 +393,16 @@ progress[value]{
     font-size: 16px;
 }
 
-
+/* mobile view */
+@media only screen and (max-width: 480px) {
+    /* dashboard login page */
+    #login_element {
+        width: 300px;
+    }
+    #first_name, #last_name {
+        width: 93px;
+    }
+}
 
 
 
@@ -323,11 +420,11 @@ progress[value]{
     width: 80%;
 }
 #section_name {
-    color: #8B8B8B;
+    color:#FFFFFF;
 }
 /* inventory page */
 #dashboard_heading button {
-    background: #8B8B8B;
+    background: #298BD4;
     color: #ffffff;
     border: none;
     padding: 10px;
